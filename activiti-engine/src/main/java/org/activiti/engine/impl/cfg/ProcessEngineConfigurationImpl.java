@@ -856,6 +856,7 @@ public abstract class ProcessEngineConfigurationImpl extends ProcessEngineConfig
     initConfigurators();
     configuratorsBeforeInit();
     initHistoryLevel();
+    //TODO  seeing
     initExpressionManager();
 
     if (usingRelationalDatabase) {
