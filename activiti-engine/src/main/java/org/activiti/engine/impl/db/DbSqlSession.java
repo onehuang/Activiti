@@ -794,6 +794,7 @@ public class DbSqlSession implements Session {
     protected void flushBulkInsert(Collection<Entity> entities,
                                    Class<? extends Entity> clazz) {
         String insertStatement = dbSqlSessionFactory.getBulkInsertStatement(clazz);
+        //TODO  为什么要从statementMappings取。。。
         insertStatement = dbSqlSessionFactory.mapStatement(insertStatement);
 
         if (insertStatement == null) {
@@ -806,6 +807,7 @@ public class DbSqlSession implements Session {
         while (entityIterator.hasNext()) {
             List<Entity> subList = new ArrayList<Entity>();
             int index = 0;
+            //TODO  一次提交100条记录。。。
             while (entityIterator.hasNext() && index < dbSqlSessionFactory.getMaxNrOfStatementsInBulkInsert()) {
                 Entity entity = entityIterator.next();
                 subList.add(entity);

@@ -877,6 +877,7 @@ public abstract class ProcessEngineConfigurationImpl extends ProcessEngineConfig
     initIdGenerator();
     initBehaviorFactory();
     initListenerFactory();
+    //TODO to parser bpmn...
     initBpmnParser();
     initProcessDefinitionCache();
     initProcessDefinitionInfoCache();
